@@ -1,0 +1,71 @@
+body{
+	background-color: #edeaea;
+	text-align: center;
+}
+.box{
+	width: 856px;
+	height: 563px;
+	background-color: #FFFFFF;
+	margin: 100px auto;
+	margin-bottom: 50px;
+	text-align: center;
+}
+form{
+	width: 333px;
+	height: 420px;
+	margin-left: 260px;
+}
+form p{
+	float: left;
+	
+}
+
+form .p1,h2{
+	margin-top: 40px;
+}
+form .p2{
+	margin-top: 15px;
+}
+form select{
+	width: 330px;
+	height: 42px;
+}
+form #btn{
+	width: 330px;
+	height: 42px;
+	background-color: orange;
+	color: #FFFFFF;
+	margin-top: 30px;
+}
+form #txt{
+	display: block;
+	width: 328px;
+	height: 38px;
+}
+form #info{
+	margin-top: 15px;
+	float: left;
+}
+.box #rad,#spa{
+	margin-top: 60px;
+}
+.bottom{
+	text-align: center;
+}
+ul{
+	text-align: center;
+	margin-left: 600px;
+	font-size: 14px;
+	
+}
+ul li{
+	float: left;
+}
+ul li a{
+	color: #000000;
+}
+#last{
+	text-align: center;
+	font-size: 14px;
+	color: #8C8C8C;
+}

@@ -1,0 +1,180 @@
+* ----------元素位置布局---------- */
+* {
+    margin: 0;
+    padding: 0;
+}
+.head{
+	height: 95px;
+	background-color: yellow;
+}
+.head img{
+	margin-left: 130px;
+}
+.middle{
+	height: 560px;
+	background: url(../img/2.jpg) no-repeat -600px 0px;
+	position: relative;
+}
+.bottom{
+	
+}
+.login {
+    width: 400px;
+    height: 500px;
+    box-shadow: 0 0 15px 3px rgba(51, 51, 51, 0.53);
+    /*margin: 20px auto 0 auto;*/
+    /* border: 1px solid aqua; */
+    text-align: center;
+    position: absolute;
+    right: 0;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+#login-text,
+#login-pwd {
+    width: 350px;
+    height: 30px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#login-sub {
+    width: 364px;
+    height: 30px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ----------样式设计---------- */
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.choose {
+    display: inline-block;
+    margin-top: 30px;
+    font-size: 22px;
+}
+
+.left {
+    color: #f56600;
+    margin-right: 15px;
+}
+
+.right {
+    margin-left: 15px;
+}
+
+#login-text,
+#login-pwd {
+    padding: 8px 5px;
+    font-size: 16px;
+    /* box-sizing: border-box; */
+    outline: none;;
+}
+
+#login-text {
+    margin-top: 35px;
+}
+
+#login-pwd {
+    margin-top: 15px;
+}
+
+#login-sub {
+    height: 50px;
+    margin-top: 15px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    background-color: #f56600;
+    color: white;
+}
+
+.forget {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 13px;
+    color: #e0e0e0;
+}
+
+.forget a {
+    color: #999;
+}
+
+.forget a:hover {
+    text-decoration: underline;
+}
+
+fieldset {
+    display: inline-block;
+    width: 364px;
+    margin-top: 80px;
+    color: #999;
+    border: none;
+    border-top: 1px solid #999
+}
+
+/* ------------icon---------- */
+
+.icon {
+    margin: 30px auto;
+}
+.iconfont{
+	font-size: 30px;
+}
+.qq,.weibo,.pay,.wechat {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    margin: 0 20px;
+    /*border-radius: 50%;*/
+    /*background: gray url("images/icons_type.png");*/
+}
+
+.qq {
+    background-position-x: -19px;
+}
+
+.weibo {
+    background-position-x: -38px;
+}
+
+.pay {
+    background-position-x: -59px;
+}
+
+.wechat {
+    background-position-x: -87px;
+}
+
+.qq:hover,
+.weibo:hover,
+.pay:hover,
+.wechat:hover{
+    /*background-color: black;*/
+}
+.bottom{
+	text-align: center;
+	font-size: 14px;
+}
+ul{
+	margin-left: 550px;
+	
+}
+ul li{
+	list-style: none;
+	float: left;
+	
+}
+#saoma{
+	margin-top: 100px;
+	/*display: none;*/
+}
+#saoma span{
+	color: red;
+}

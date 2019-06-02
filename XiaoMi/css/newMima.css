@@ -1,0 +1,66 @@
+body{
+	background-color: #edeaea;
+}
+form h2{
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+.box{
+	width: 856px;
+	height: 563px;
+	background-color: #FFFFFF;
+	margin: 100px auto;
+	margin-bottom: 50px;
+	text-align: center;
+}
+form{
+	width: 333px;
+	height: 420px;
+	margin-left: 260px;
+	font-size: 13px;
+}
+#txt1{
+	width: 332px;
+	height: 38px;
+	margin-top: 15px;
+}
+#txt2{
+	width: 332px;
+	height: 38px;
+	overflow: hidden;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.wenzi{
+
+	text-align: left;
+	/*margin-top: 15px;*/
+}
+#btn{
+	width: 332px;
+	height: 38px;
+	background-color: orange;
+	color: #FFFFFF;
+	margin-top: 15px;
+}
+.bottom{
+	text-align: center;
+}
+ul{
+	text-align: center;
+	margin-left: 600px;
+	font-size: 14px;
+	
+}
+ul li{
+	float: left;
+}
+ul li a{
+	color: #000000;
+}
+#last{
+	text-align: center;
+	font-size: 14px;
+	color: #8C8C8C;
+}

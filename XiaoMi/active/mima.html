@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/mima.css"/>
+		<script src="../js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="box">
+			<form action="">
+				<img src="../img/3.png"/>
+				<h2>重置密码</h2>
+				<p>请输入注册的邮箱地址、手机号码或小米帐号：</p>
+				<input type="text" id="txt1" value="" placeholder="邮箱/手机号码/小米账号"/>
+				<div id="info1">
+					
+				</div>
+				<input type="text" id="txt2" value="" placeholder="图片验证码"/><span id="yzm">
+					
+				</span>
+				<div id="info2">
+					
+				</div>
+				<div class="wenzi">
+					用户输入手机号码时请正确选择区域前缀，如：台湾：+8869*******，香港：+8526*******
+				</div>
+				
+				<p><a href="#">帮助</a></p>
+				<input type="button" id="btn" value="下一步" />
+			</form>
+
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	//得到随机的验证码
+	var yzm=document.getElementById('yzm');
+	yzm.style.fontSize=18+'px';
+	yzm.innerHTML=getYZM(5);
+	yzm.style.cursor='pointer';
+	yzm.onclick=function(){
+		yzm.innerHTML=getYZM(5);
+		yzm.style.fontSize=18+'px';
+		
+	}
+	//对表单进行验证
+	var txt1=document.getElementById('txt1');
+	var txt2=document.getElementById('txt2');
+	var btn=document.getElementById('btn');
+	var info1=document.getElementById('info1');
+	var info2=document.getElementById('info2');
+	//
+	var phonereg=/^1[3-9]\d{9}$/;
+	var reg=/^1[3-9]\d{9}$/;
+	var emailreg=/^\d{2,9}@[a-zA-Z]{2,11}(\.[a-z]{2,3}){1,2}$/;
+	var mireg=/^[a-zA-Z0-9]{5,11}$/;
+	btn.onclick=function(){
+		info2.innerHTML='';
+		info1.innerHTML='';
+		var val1=txt1.value;
+		var val2=txt2.value;
+		if(val1==''){
+			info1.innerHTML='请输入账号';
+			info1.style.color='red';
+			return;
+		}
+		console.log(phonereg.test(val1));
+		
+		if((phonereg.test(val1)==false)||(emailreg.test(val1)==false)||(mireg.test(val1)==false)){
+			
+			info1.innerHTML='账号格式不正确';
+			info1.style.color='red';
+//			return;
+		}
+		if(val2!=yzm.innerHTML){
+			info2.innerHTML='验证码不正确';
+			info2.style.color='red';
+			return;
+		}
+			$.ajax({
+			type:"post",
+			url:"../json/denglu.json",
+			async:true,
+			dataType:'json',
+			success:function(res){
+//				console.log(res);
+				for (var i=0;i<res.length;i++) {
+					if(res[i].username==val1){
+						alert('往下跳转');
+						//此处应该跳转到下一步
+//						location.href="newMima.html?username="+val1;
+						location.href="newMima.html";
+						return;
+					}	
+					
+				}
+				alert('用户名不正确');
+			}
+		});
+	}
+</script>

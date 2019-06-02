@@ -1,0 +1,108 @@
+.header{
+	height: 100px;
+	width: 100%;
+	background-color: pink;
+	border-bottom: 2px red solid;
+}
+.left{
+	width: 800px;
+	height: 100px;
+	float: left;
+	text-align: center;
+	margin-left: 100px;
+}
+.left .one{
+	font-size: 26px;
+	margin-left: 30px;
+}
+.left .two{
+	margin-left: 10px;
+}
+.left img{
+	margin-top: 30px;
+	float: left;
+}
+.left span{
+	float: left;
+	/*margin-top: 50px;*/
+	line-height: 100px;
+	
+}
+ul li{
+	position: relative;
+	/*text-align: center;*/
+}
+ul li ol{
+	top: 20px;
+	left: 20px;
+	display: none;
+	position: absolute;
+}
+ul li:hover ol{
+	display: block;
+}
+ol li{
+	height: 20px;
+}
+.right {
+	width: 220px;
+	height: 100px;
+	float: right;
+	text-align: center;
+	margin-top: 40px;
+	/*line-height: 100px;*/
+	/*position: relative;*/
+}
+.right a{
+	color: #000000;
+}
+/*.right ul a :hover ul{
+	display: block;
+}*/
+/*.right.first a{
+	display: inline-block;
+	margin-right: 10px;
+}*/
+ul li{
+	/*height: 40px;*/
+	float:left;
+	
+}
+/*ul li a{
+	display: inline-block;
+}*/
+.header .left h2{
+	display: inline-block;
+}
+.list table{
+	margin-top: 60px;
+	width: 1200px;
+	margin-left: 100px;
+}
+p{
+	width: 1200px;
+	text-align: center;
+	margin-left: 100px;
+	height: 50px;
+}
+.btn{
+	width: 150px;
+	height: 50px;
+	background-color: orange;
+	color: #FFFFFF;
+	font-size: 16px;
+	float: right;
+}
+.xiaobox{
+	width: 55px;
+	height: 80px;
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+	float: left;
+}
+.xiaobox .logo{
+	width: 110px;
+	
+	position: absolute;
+}

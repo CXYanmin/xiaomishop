@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/zhuceMima.css"/>
+		<script src="../js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="box">
+			<form action="">
+				<img src="../img/3.png"/>
+				<h2>设置密码</h2>
+				<p>你的注册手机号为<span id="littlebox"></span></p>
+				<input type="text" id="txt1" value="" placeholder="请输入密码"/>
+				<input type="text" id="txt2" value="" placeholder="请输入确认密码"/>
+				<div id="info3">
+					
+				</div>
+				<div class="wenzi" id="wenzi">
+					密码长度8~16位，数字、字母、字符至少包含两种
+				</div>
+				
+				<input type="button" id="btn" value="提交" />
+			</form>
+
+		</div>
+				<div class="bottom">
+				<ul>
+					<li><a href="">简体|</a></li>
+					<li><a href="">繁体|</a></li>
+					<li><a href="">English|</a></li>
+					<li><a href="">常见问题|</a></li>
+					<li><a href="">隐私政策</a></li>
+				</ul><br />
+				<p id="last">小米公司版权所有-京ICP备10046444-京公网安备11010802020134号-京ICP证110507号</p>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var txt1=document.getElementById('txt1');
+	var txt2=document.getElementById('txt2');
+	var info3=document.getElementById('info3');
+	var wenzi=document.getElementById('wenzi');
+	var littlebox=document.getElementById('littlebox');
+	//得到传递过来的用户名
+	var search=location.search;
+	var username=search.split('=')[1];
+	//显示当下注册的用户名
+		littlebox.innerHTML=username;
+		littlebox.style.color='red';
+	//正则验证
+	var mreg=/((?=.*\d)(?=.*\D)|(?=.*[a-zA-Z])(?=.*[^a-zA-Z]))^.{8,16}$/;
+	btn.onclick=function(){
+		var value1=txt1.value;
+		var value2=txt2.value;
+		if(value1==''){
+			info3.innerHTML='请输入密码';
+			info3.style.color='red';
+			txt1.onfocus=function(){
+				info3.innerHTML='';
+			}
+			return;
+		}
+		if(value2==''){
+			info3.innerHTML='请输入确认密码';
+//			wenzi.style.color='red';
+			info3.style.color='red';
+			txt2.onfocus=function(){
+				info3.innerHTML='';
+			}
+			return;
+		}
+		if(!mreg.test(value1)){
+			wenzi.style.color='red';
+			txt1.onfocus=function(){
+				wenzi.style.color='black';
+			}
+			return;
+		}
+
+		if(value1==value2){
+			alert('用户名密码设置成功');
+//			ajax请求，往localstrage里存储手机号和密码
+			var arr=[];
+			var number={'username':username,'password':value1};
+			arr.push(number);
+			localStorage.number=JSON.stringify(arr);
+			//跳到登录界面
+			location.href='denglu.html';
+		}else{
+			info3.innerHTML='密码不一致';
+			info3.style.color='red';
+			txt2.onfocus=function(){
+				info3.innerHTML='';
+			}
+		}
+	}
+</script>

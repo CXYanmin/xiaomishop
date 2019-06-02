@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/denglu.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="wrap">
+			<div class="head">
+				<a href=""><img src="../img/1_02.png"/></a>
+			</div>
+			<div class="middle">
+				<div class="login" id="login1">
+    			<a href="#" class="choose left" id="left1">账号登录</a>
+    			<span style="color: #e0e0e0">|</span>
+    			<a href="#" class="choose right" id="right1">扫码登录</a>
+    			<div id="zhdenglu">
+    				    			<form>
+        			<input type="text" placeholder="邮箱/手机号/小米账号" id="login-text">
+        			<input type="password" placeholder="密码" id="login-pwd">
+        			<div id="tishi">
+        				
+        			</div>
+        			<input type="button" value="登录" id="login-sub">
+   	 			</form>
+    			<span class="forget">
+        			<a href="#" id="a1">注册小米账号</a>
+        			<span>|</span>
+        			<a href="mima.html">忘记密码?</a></span>
+    			<fieldset>
+        			<legend>其他方式登录</legend>
+    			</fieldset>
+    			<div class="icon">
+        			<a href="#" class="qq"><strong class="iconfont">&#xe65e;</strong></a>
+        			<a href="#" class="weibo"><strong class="iconfont">&#xe65f;</strong></a>
+        			<a href="#" class="pay"><strong class="iconfont">&#xe60a;</strong></a>
+        			<a href="#" class="wechat"><strong class="iconfont">&#xe73b;</strong></a>
+    			</div>
+    			</div>
+				<div id="saoma" >
+					<img src="../img/5.png"/>
+					<p>使用<span>小米商城APP</span>扫一扫</p>
+					<p>小米手机可打开「设置」>「小米帐号」扫码登录</p>
+				</div>
+			</div>
+		</div>
+			<div class="bottom">
+				<ul>
+					<li><a href="">简体|</a></li>
+					<li><a href="">繁体|</a></li>
+					<li><a href="">English|</a></li>
+					<li><a href="">常见问题|</a></li>
+					<li><a href="">隐私政策</a></li>
+				</ul><br />
+				<p>小米公司版权所有-京ICP备10046444-京公网安备11010802020134号-京ICP证110507号</p>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	//账号登录和扫码登录切换
+	var login1=document.getElementById('login1');
+	var right1=document.getElementById('right1');
+	var left1=document.getElementById('left1');
+	var zhdenglu=document.getElementById('zhdenglu');
+	var saoma=document.getElementById('saoma');
+	right1.onclick=function(){
+		zhdenglu.style.display='none';
+		saoma.style.display='block';
+		right1.style.color='red';
+		left1.style.color='black';
+	}
+	left1.onclick=function(){
+		zhdenglu.style.display='block';
+		saoma.style.display='none';
+		right1.style.color='black';
+		left1.style.color='red';
+	}
+	//登录验证
+	var login=document.getElementById('login-sub');
+	var logintext=document.getElementById('login-text');
+	var loginpwd=document.getElementById('login-pwd');
+	var info=document.getElementById('tishi');
+	login.onclick=function(){
+		var username=logintext.value;
+		var password=loginpwd.value;
+		if(logintext.value==''){
+			info.innerHTML='请输入用户名';
+			info.style.color='red';
+			return;
+		}
+		if(loginpwd.value==''){
+			info.innerHTML='请输入密码';
+			info.style.color='red';
+			return;
+		}
+		$.ajax({
+			type:"post",
+			url:"../json/denglu.json",
+			async:true,
+			dataType:'json',
+//			data:{'username':username,'password':password},
+			success:function(res){
+				console.log(res);
+				for (var i=0;i<res.length;i++) {
+					if(res[i].username==username&&res[i].password==password){
+						alert('登录成功');
+						//此处应该跳转到首页
+						return;
+					}	
+					
+				}
+//				alert('用户名或密码不正确');
+				info.innerHTML='用户名或密码不正确';
+				info.style.color='red';
+				logintext.onfocus=function(){
+					info.innerHTML='';
+				}
+				loginpwd.onfocus=function(){
+					info.innerHTML='';
+				}
+			}
+		});
+	}
+	//登录页面注册小米账号跳转
+	var a1=document.getElementById('a1');
+	a1.onclick=function(){
+		location.href='./zhuce.html';
+	}
+	//点击忘记密码的a标签实现找回密码功能
+	
+</script>

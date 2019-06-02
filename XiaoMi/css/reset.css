@@ -1,0 +1,12 @@
+*{
+	margin: 0;padding: 0;
+}
+body,html,ul,li,ol,h1,h2,h3,h4,h5,h6,p,span,a,input,form,table,tr,td,dl,dt,dd,i,em,strong,b,div,img,fieldset,legend{
+	margin:0; padding:0;
+}
+ul li,ol li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}

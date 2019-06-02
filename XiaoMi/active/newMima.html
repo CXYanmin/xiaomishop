@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/newMima.css"/>
+		<script src="../js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="box">
+			<form action="">
+				<img src="../img/3.png"/>
+				<h2>重置密码</h2>
+				<p>请输入注册的邮箱地址、手机号码或小米帐号：</p>
+				<input type="password" id="txt1" value="" placeholder="请输入新密码"/>
+				<input type="password" id="txt2" value="" placeholder="请输入确认密码"/>
+				<div id="info3">
+					
+				</div>
+				<div class="wenzi" id="wenzi">
+					密码长度8~16位，数字、字母、字符至少包含两种
+				</div>
+				
+				<input type="button" id="btn" value="提交" />
+			</form>
+
+		</div>
+						<div class="bottom">
+				<ul>
+					<li><a href="">简体|</a></li>
+					<li><a href="">繁体|</a></li>
+					<li><a href="">English|</a></li>
+					<li><a href="">常见问题|</a></li>
+					<li><a href="">隐私政策</a></li>
+				</ul><br />
+				<p id="last">小米公司版权所有-京ICP备10046444-京公网安备11010802020134号-京ICP证110507号</p>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var txt1=document.getElementById('txt1');
+	var txt2=document.getElementById('txt2');
+	var info3=document.getElementById('info3');
+	var wenzi=document.getElementById('wenzi');
+//	var username=search.split('=')[1];
+	var mreg=/((?=.*\d)(?=.*\D)|(?=.*[a-zA-Z])(?=.*[^a-zA-Z]))^.{8,16}$/;
+	btn.onclick=function(){
+		var value1=txt1.value;
+		var value2=txt2.value;
+		if(value1==''){
+			info3.innerHTML='请输入新密码';
+			info3.style.color='red';
+			txt1.onfocus=function(){
+				info3.innerHTML='';
+			}
+			return;
+		}
+		if(value2==''){
+			info3.innerHTML='请输入密码';
+//			wenzi.style.color='red';
+			info3.style.color='red';
+			txt2.onfocus=function(){
+				info3.innerHTML='';
+			}
+			return;
+		}
+		if(!mreg.test(value1)){
+			wenzi.style.color='red';
+			txt1.onfocus=function(){
+				wenzi.style.color='black';
+			}
+			return;
+		}
+
+		if(value1==value2){
+			alert('密码重置成功');
+			//跳到登录界面
+			location.href='denglu.html';
+		}else{
+			info3.innerHTML='密码不一致';
+			info3.style.color='red';
+			txt2.onfocus=function(){
+				info3.innerHTML='';
+			}
+		}
+	}
+</script>

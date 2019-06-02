@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/MyCar.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css"/>
+		<script src="../js/animate1.0.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="left">
+				<div class="xiaobox" id="xiaobox">
+					<div class="logo" id="logo">
+						<a><img src="../img/3.png"/></a>
+						<a href="#"><img src="../img/4.png"/></a>
+					</div>
+				</div>
+				<span class="one">我的购物车</span>
+				<span class="two">温馨提示：产品是否购买成功，以最终下单为准哦，请尽快结算</span>
+			</div>
+			<div class="right">
+				<ul>
+					<li class="first" id="second"><a href="#">17244566788<img src="../img/6.png"/></a>
+						<ol>
+						<li><a href="#">我的小米</a></li>
+						<li><a href="#">我的账号</a></li>
+						<li><a href="#">个人中心</a></li>
+						<li><a href="#">评价晒单</a></li>
+						</ol>
+					</li>
+					<li><a href="#">|我的订单</a></li>
+				</ul>
+				
+			</div>
+		</div>
+		<div class="list">
+			<table class="table table-hover table-bordered">
+				<thead>
+				<tr>
+				<th>序号</th>
+				<th>商品名称</th>
+				<th>商品价格</th>
+				<th>商品数量</th>
+				<th>商品总价</th>
+				<th>操作</th>
+			</tr>
+				</thead>
+				<tbody id="tbody">
+				<!--<tr>
+				<td>1</td>
+				<td>华为</td>
+				<td>3500</td>
+				<td>2</td>
+				<td>7000</td>
+					<td><button id="btn" onclick="delcar(${carlist[i].id})">删除</button></td>
+			</tr>-->
+				</tbody>
+
+
+		</table>
+	<p>
+		<span id="totalnum">
+			123
+		</span>
+		<span id="totalprice">
+			456
+		</span>
+		<button class="btn">去结算</button>
+	</p>
+		</div>
+	
+	</body>
+</html>
+<script type="text/javascript">
+	var second=document.getElementById('second');
+	var info=document.getElementById('info');
+	var xiaobox=document.getElementById('xiaobox');
+	var logo=document.getElementById('logo');
+	xiaobox.onmouseover=function(){
+		animate(logo,-55,10);
+		
+	}
+	xiaobox.onmouseout=function(){
+		animate(logo,0,10);
+	}
+	
+</script>
